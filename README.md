@@ -26,13 +26,12 @@ I've included a Makefile to simplify processes if you are running on a
 Unix system (MacOS, Linux, Windows Subsystem for Linux, etc). The Makefile
 expects `make` and `wget` to be installed.
 
-To run the preprocessing script, you can either run `make preprocess`.
+To run the preprocessing script, you can just run `make preprocess`.
 
-This automatically downloads three Excel files to be in the `raw_data`
-directory: `raw_data/Admissions_Data_2009.xls`,
-`raw_data/Admissions_Data_2010.xls`, and `raw_data/Admissions_Data_2011.xls`,
-runs the preprocessing script, and outputs the combined CSV file as
-`data/tjadm_all_2009_2011.csv`
+This automatically downloads three Excel files into the `raw_data` directory:
+`raw_data/Admissions_Data_2009.xls`, `raw_data/Admissions_Data_2010.xls`, and
+`raw_data/Admissions_Data_2011.xls`, runs the preprocessing script, and outputs
+the combined CSV file as `data/tjadm_all_2009_2011.csv`
 
 ### Running things manually
 
