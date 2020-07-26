@@ -49,7 +49,9 @@ table(tjadm2009$'Math-in-8')
 table(tjadm2009$'Math-in-8',tjadm2009$Course...22)
 table(tjadm2009$Course...22)
 
-#rename 2009 vars to match 2010 and 2011
+# add Semifinal column in 2009
+
+# rename 2009 vars to match 2010 and 2011
 tjadm2009x<-tjadm2009x%>% select(GENDER=sex, ETHNIC,
            MATHCL8_2009='Math-in-8', FINALDC='Final decision',
            ENG07=Mark...7, LANG07=Mark...9,
@@ -62,6 +64,9 @@ tjadm2009x<-tjadm2009x%>% select(GENDER=sex, ETHNIC,
           COMPPCT='Comp pct', STUGPA=GPA,
           SEMIFINAL=, ESSAY1='Essay 1', ESSAY2='Essay 2',
           SCHYR=...1, GT_2009='GT Status')
+
+tjadm2009x$SEMIFINAL[ is.na(tjadm2009x$FINALDC) ] <- "N"
+tjadm2009x$SEMIFINAL[ !is.na(tjadm2009x$FINALDC) ] <- "Y"
 # View(tjadm2009x)
 
 #2010, 2011: change >99 to 99.9, <1 to 0.1
